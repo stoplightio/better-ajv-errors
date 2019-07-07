@@ -1,6 +1,6 @@
-/lib/
 /node_modules/
 /coverage/
 *.log
 .vscode
+.idea/
 package-lock.json
