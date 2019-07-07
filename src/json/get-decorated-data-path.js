@@ -1,6 +1,11 @@
+import { decodePointerFragment } from './utils';
+
 export default function getDecoratedDataPath(jsonAst, dataPath) {
-  // TODO: Handle json pointer escape notation and better error handling
-  const pointers = dataPath.split('/').slice(1);
+  // TODO: Better error handling
+  const pointers = dataPath
+    .split('/')
+    .slice(1)
+    .map(decodePointerFragment);
   let decoratedPath = '';
   pointers.reduce((obj, pointer) => {
     switch (obj.type) {

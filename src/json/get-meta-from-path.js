@@ -1,10 +1,15 @@
+import { decodePointerFragment } from './utils';
+
 export default function getMetaFromPath(
   jsonAst,
   dataPath,
   isIdentifierLocation
 ) {
-  // TODO: Handle json pointer escape notation and better error handling
-  const pointers = dataPath.split('/').slice(1);
+  // TODO: Better error handling
+  const pointers = dataPath
+    .split('/')
+    .slice(1)
+    .map(decodePointerFragment);
   const lastPointerIndex = pointers.length - 1;
   return pointers.reduce((obj, pointer, idx) => {
     switch (obj.type) {
