@@ -60,7 +60,6 @@
     "build": "yarn run clean && yarn build:modern && yarn build:legacy",
     "build:modern": "BABEL_ENV=modern babel src -d lib/modern/",
     "build:legacy": "BABEL_ENV=legacy babel src -d lib/legacy",
-    "prepare": "yarn build",
     "format": "prettier --write src/*.js src/**/*.js",
     "test": "jest",
     "test-ci": "jest --coverage && codecov",
