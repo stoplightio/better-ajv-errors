@@ -51,10 +51,9 @@ if (!valid) {
 
 ## API
 
-### betterAjvErrors(schema, data, errors, [options])
+### betterAjvErrors(schema, data, errors)
 
-Returns formatted validation error to **print** in `console`. See
-[`options.format`](#format) for further details.
+Returns formatted validation error to **print** in `console`.
 
 #### schema
 
@@ -68,10 +67,6 @@ Type: `Array`
 
 Array of
 [ajv validation errors](https://github.com/epoberezkin/ajv#validation-errors)
-
-#### options
-
-Type: `Object`
 
 ##### propertyPath
 
